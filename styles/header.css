@@ -1,6 +1,7 @@
 header {
     background-color: var(--amarelo-escuro);
     position: fixed;
+    z-index: 2;
     width: 100%;
     .header__img  {
         padding: 16px;

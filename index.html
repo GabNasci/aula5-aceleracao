@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -31,9 +32,19 @@
         </div>
     </header>
     <main>
-        <section class="banner">
-            <img src="./img/bicicleta.png" alt="">
-        </section>
+        <!-- Slider main container -->
+        <div class="swiper banner">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="./img/bicicleta.png" alt=""></div>
+                <div class="swiper-slide"><img src="./img/tenis-nike.png" alt=""></div>
+                <div class="swiper-slide"><img src="./img/notebook.png" alt=""></div>
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
 
         <div class="subtitulo">
             <h3>Categorias</h3>
@@ -52,22 +63,22 @@
             <h3>Em promoção!</h3>
         </div>
 
-        <section>
-            <div>
+        <section class="container__produtos">
+            <div class="card_produto">
                 <img src="./img/caixa-de-ferramentas.png" alt="">
                 <div>
                     <h3>Caixa de ferramentas</h3>
                     <a href=""><i class="fa-solid fa-cart-arrow-down"></i></a>
                 </div>
             </div>
-            <div>
+            <div class="card_produto">
                 <img src="./img/tenis-adidas.png" alt="">
                 <div>
                     <h3>Tênis Adidas</h3>
                     <a href=""><i class="fa-solid fa-cart-arrow-down"></i></a>
                 </div>
             </div>
-            <div>
+            <div class="card_produto">
                 <img src="./img/bola-de-futebol.png" alt="">
                 <div>
                     <h3>Bola de Futebol</h3>
@@ -118,7 +129,7 @@
         </div>
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const botao = document.getElementById('botao')
         const menu = document.getElementById('menu')
@@ -129,6 +140,29 @@
             perfil.classList.toggle('mostrar')
             botao.classList.toggle('fa-xmark')
         })
+
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            autoplay: {
+                delay: 3000,
+            },
+
+           
+            shadow: false,
+            slideShadows: false
+
+        });
+
+
 
     </script>
 </body>
